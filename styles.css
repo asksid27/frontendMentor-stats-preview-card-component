@@ -1,13 +1,11 @@
 *,
-*::after,
-*::before {
+*::before,
+*::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 :root {
-  --main-background: hsl(233, 47%, 7%);
+  --main-background: hsl(233, 49%, 7%);
   --card-background: hsl(244, 38%, 16%);
   --accent: hsl(277, 64%, 61%);
 
@@ -17,39 +15,31 @@
 }
 
 body {
-  font-size: 15px;
+  margin: 0;
+  padding: 0;
   background-color: var(--main-background);
-  height: 100vh;
-}
-
-.container {
-  display: grid;
-  place-items: center;
-  height: 97%;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
 }
 
 .card {
-  width: 60%;
-  height: 450px;
   border-radius: 0.5em;
-  display: flex;
+  position: relative;
+  margin: 6em 1.2em;
   background-color: var(--card-background);
-  overflow: hidden;
 }
 
 .content {
-  flex: 1;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 4em;
-  padding-right: 8em;
+  padding: 1.5em;
 }
 
-.content > h1 {
-  font-size: 2.5em;
+h1 {
   color: var(--main-heading);
+  text-align: center;
 }
 
 .highlight {
@@ -57,91 +47,78 @@ body {
 }
 
 .content > p {
-  width: 90%;
-  margin-bottom: 50px;
-  font-size: 1.1em;
+  font-family: "Lexend Deca", sans-serif;
   color: var(--main-paragraph);
+  text-align: center;
+  padding: 1em;
+  line-height: 1.6em;
 }
 
 .stats {
   display: flex;
-  width: 90%;
-  font-size: 0.8em;
-  color: var(--stat-headings);
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
 }
 
-.stats-number {
-  font-size: 2.5em;
-  font-weight: bold;
+.stats > div {
+  margin: 1em;
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--stat-headings);
+}
+
+.stats p {
   color: var(--main-heading);
+  font-weight: bold;
+  margin: 0.2em;
+  font-size: 1.6em;
+  text-align: center;
 }
 
 .image {
-  flex: 1.3;
-  background: url("./images/image-header-desktop.jpg") var(--accent);
+  background: var(--accent) url("./images/image-header-mobile.jpg");
   background-size: cover;
+  height: 250px;
   background-blend-mode: multiply;
+  opacity: 0.8;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
 }
 
 .attribution {
-  font-size: 11px;
-  text-align: center;
+  font-size: 0.7em;
+  position: absolute;
+  bottom: -5%;
   color: white;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 0.5em;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
 
-@media (max-width: 1600px) {
-  .content {
-    padding: 4em;
-  }
-}
-
-@media (max-width: 1400px) {
-  .content {
-    padding: 2em;
-  }
-}
-
-@media (max-width: 1200px) {
-  .content {
-    padding: 1em;
-  }
-}
-
-@media (max-width: 1200px) {
-  body {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 800px) {
-  body {
-    height: 150vh;
-  }
-
-  .card {
-    flex-direction: column-reverse;
-    width: 90%;
-    height: 90%;
-  }
-  .content {
-    justify-content: center;
-    align-items: center;
-    padding: 2em;
-  }
-
+@media (min-width: 600px) {
   .stats {
-    height: 100px;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 800px) {
+  .card {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-between;
+    height: 400px;
   }
   .image {
-    flex: 0.5;
-    background: url("./images/image-header-mobile.jpg") var(--accent);
-    background-size: cover;
+    background: var(--accent) url("./images/image-header-desktop.jpg");
+    flex: 1;
+    height: 100%;
+  }
+  .content {
+    flex: 1;
   }
 }
