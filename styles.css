@@ -105,7 +105,7 @@ h1 {
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .card {
     display: flex;
     flex-direction: row-reverse;
