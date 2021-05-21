@@ -63,7 +63,7 @@ h1 {
 
 .stats > div {
   margin: 1em;
-  font-family: "Lexend Deca", sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--stat-headings);
 }
 
@@ -111,14 +111,50 @@ h1 {
     flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
-    height: 400px;
+    height: 450px;
+    max-width: 1100px;
   }
   .image {
     background: var(--accent) url("./images/image-header-desktop.jpg");
+    background-size: cover;
+    background-blend-mode: multiply;
+    border-radius: 0 0.5em 0.5em 0;
     flex: 1;
     height: 100%;
   }
   .content {
     flex: 1;
+  }
+  .content > p {
+    text-align: left;
+    margin: 0;
+    padding-left: 3em;
+    padding-top: 0;
+    margin-right: 4em;
+    margin-bottom: 2em;
+    letter-spacing: 0.05em;
+    margin-top: 0;
+  }
+  h1 {
+    text-align: left;
+    margin: 0;
+    padding: 1em;
+    margin-right: 1em;
+    font-size: 2.5em;
+    margin-left: 0.2em;
+  }
+  .stats {
+    justify-content: space-between;
+    padding: 0;
+    margin-left: 2em;
+    width: 80%;
+  }
+  .stats div {
+    text-align: left;
+  }
+  .stats p {
+    font-size: 1.8em;
+    margin-left: -0.005em;
+    text-align: left;
   }
 }
